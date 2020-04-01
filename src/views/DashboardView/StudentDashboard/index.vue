@@ -1,14 +1,18 @@
 <template>
   <div class="student-dashboard">
     <dashboard-banner />
-    <subject-selection />
+    <div class="downtime">
+      <p>
+        Sorry, tutoring is currently unavailable due to technical issues. Please
+        try again tomorrow!
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import DashboardBanner from "../DashboardBanner";
-import SubjectSelection from "./SubjectSelection";
 
 const headerData = {
   component: "RejoinSessionHeader",
@@ -17,7 +21,7 @@ const headerData = {
 
 export default {
   name: "student-dashboard",
-  components: { DashboardBanner, SubjectSelection },
+  components: { DashboardBanner },
   created() {
     if (this.isSessionAlive) {
       this.$store.dispatch("app/header/show", headerData);
@@ -49,5 +53,12 @@ export default {
     min-width: 100%;
     padding: 40px;
   }
+}
+
+.downtime {
+  padding: 90px 20px;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 8px;
 }
 </style>

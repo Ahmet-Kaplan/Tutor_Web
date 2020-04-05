@@ -29,8 +29,8 @@ Vue.use(VueRouter);
 
 // Set up Sentry error tracking
 Sentry.init({
-  // Our Sentry project is configured to only accept calls from app.upchieve.org
-  dsn: "https://0300061759f44def9726bcd3c0ed5611@sentry.io/1819161",
+  // Our Sentry project is configured to only accept calls from My App
+  dsn: "https://57f4a4a068dd41e1abc8a89b2088508a@sentry.io/5189653",
   integrations: [
     new Integrations.Vue({ Vue, attachProps: true, logErrors: true })
   ],
